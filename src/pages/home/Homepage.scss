@@ -1,0 +1,80 @@
+.top-banner{
+    width: 100%;
+    background: #fffdef;
+}
+.banner {
+    display: flex;
+    max-width: 1484px;
+    margin: auto;
+    gap: 114px;
+    opacity: 1;
+    align-items: center;
+
+
+    .bannertext {
+        width: 805px;
+        height: 270px;
+        gap: 16px;
+        opacity: 1;
+
+
+
+
+        h2 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 77px;
+        }
+
+        p {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .browsebtn {
+            min-width: 184px;
+            height: 48px;
+            padding-top: 5px;
+            padding-right: 24px;
+            padding-bottom: 5px;
+            padding-left: 24px;
+            gap: 8px;
+            border-radius: 8px;
+            background-color: #FFD343;
+            color: #0A0A0A !important;
+            cursor: pointer;
+            margin-right: 4px;
+            text-decoration: none;
+
+
+
+        }
+
+        .listbtn {
+            margin-left: 4px;
+            min-width: 191px;
+            height: 48px;
+            padding-top: 5px;
+            padding-right: 24px;
+            padding-bottom: 5px;
+            padding-left: 24px;
+            border-radius: 8px;
+            border-width: 1px;
+            border: 1px solid #ffd343;
+            text-decoration: none;
+            color: #0A0A0A !important;
+
+        }
+
+    }
+
+    .bannerimage {
+        width: 565px;
+        height: 565px;
+        top: 82.33px;
+        left: 919px;
+        opacity: 1;
+
+
+    }
+}
