@@ -1,5 +1,5 @@
 import React from "react";
-import "./Browsepets.scss";
+import "./BrowsePets.scss";
 function Browsepets(){
     return(
         <>

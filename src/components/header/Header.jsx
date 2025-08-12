@@ -1,9 +1,21 @@
 import React from "react";
 import "./Header.scss";
-function Header(){
-    return(
+import dogLogo from "../../assets/pet-logo.svg";
+import { Link, useLocation } from "react-router-dom";
+function Header() {
+    const { pathname } = useLocation();
+    return (
         <>
-        <h1>Header</h1>
+            <div className="header-first">
+                <div className="header-left"> <p className="header-text"><img src={dogLogo} alt="Dog Logo" />Pet Match</p></div>
+                <nav className="nav-link">
+                    <Link className={pathname === "/" ? "active" : ""} to="/">Home</Link>
+                    <Link className={pathname === "/browsepets" ? "active" : ""} to="browsepets">BrowsePets</Link>
+                    <Link className={pathname === "/about" ? "active" : ""} to="about">About</Link>
+                    <Link className={pathname === "/contact" ? "active" : ""} to="contact">Contact</Link>
+                    <div className="header-right"><button className="logout-btn">Logout</button></div>
+                </nav>
+            </div>
         </>
     );
 }
