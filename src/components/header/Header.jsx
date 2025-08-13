@@ -7,14 +7,14 @@ function Header() {
     return (
         <>
             <div className="header-first">
-                <div className="header-left"> <p className="header-text"><img src={dogLogo} alt="Dog Logo" />Pet Match</p></div>
-                <nav className="nav-link">
-                    <Link className={pathname === "/" ? "active" : ""} to="/">Home</Link>
-                    <Link className={pathname === "/browsepets" ? "active" : ""} to="browsepets">BrowsePets</Link>
-                    <Link className={pathname === "/about" ? "active" : ""} to="about">About</Link>
-                    <Link className={pathname === "/contact" ? "active" : ""} to="contact">Contact</Link>
-                    <div className="header-right"><button className="logout-btn">Logout</button></div>
-                </nav>
+                    <div className="header-left"> <p className="header-text"><img src={dogLogo} alt="Dog Logo" />Pet Match</p></div>
+                    <nav className="nav-link">
+                        <Link className={pathname === "/" ? "active" : ""} to="/">Home</Link>
+                        <Link className={pathname === "/browsepets" ? "active" : ""} to="browsepets">BrowsePets</Link>
+                        <Link className={pathname === "/about" ? "active" : ""} to="about">About</Link>
+                        <Link className={pathname === "/contact" ? "active" : ""} to="contact">Contact</Link>
+                        <div className="header-right"><button className="logout-btn">Logout</button></div>
+                    </nav>
             </div>
         </>
     );
