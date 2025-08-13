@@ -1,12 +1,13 @@
-.top-banner{
+.top-banner {
     width: 100%;
     background: #fffdef;
 }
+
 .banner {
     display: flex;
-    max-width: 1484px;
+    max-width: 1400px;
     margin: auto;
-    gap: 114px;
+    gap: 76px;
     opacity: 1;
     align-items: center;
 
@@ -76,5 +77,104 @@
         opacity: 1;
 
 
+    }
+}
+.pet-carousel {
+    max-width: 1400px;
+    margin: 50px auto;
+    text-align: center;
+
+    .title {
+        font-weight: 700;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .carousel-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-btn {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0 15px;
+
+        &:hover {
+            color: #FFD34D;
+        }
+    }
+
+    .cards-container {
+        display: flex;
+        flex: 1;
+        justify-content: space-evenly;
+    }
+
+    .pet-card {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        max-width: 396px;
+        width: 100%;
+        padding: 16px;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .pet-image {
+            max-width: 364px;
+            height: 289px;
+            object-fit: cover;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .card-body {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .pet-name {
+         
+            font-weight: 700;
+            font-size: 32px;
+            color: #000000;
+
+        }
+
+        .pet-info,
+        .pet-location {
+            font-size: 24px;
+            font-weight: 500;
+             
+            color:#000000;
+        }
+
+        .view-btn {
+            background-color: #FFD34D;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            width: 360px;
+            height: 50px;
+
+            &:hover {
+                background-color: #f0c000;
+            }
+        }
     }
 }
