@@ -2,30 +2,74 @@
   {
     "id": 1,
     "name": "Meenu",
-    "age": "1 Yr, Female",
+    "type": "Cat",
+    "age": "1 Yr",
+    "sex": "Female",
     "location": "Chennai",
     "image": "/data/images/cat-list.png"
-
   },
   {
     "id": 2,
     "name": "Bob",
-    "age": "1 Yr, Female",
+    "type": "Dog",
+    "age": "1 Yr",
+    "sex": "Female",
     "location": "Chennai",
     "image": "/data/images/dog-list.png"
   },
   {
     "id": 3,
     "name": "Reo",
-    "age": "1 Yr, Female",
+    "type": "Dog",
+    "age": "1 Yr",
+    "sex": "Female",
     "location": "Chennai",
     "image": "/data/images/dog-sit.png"
   },
-    {
+  {
     "id": 4,
     "name": "Reo2",
-    "age": "1 Yr, Female",
+    "type": "Dog",
+    "age": "1 Yr",
+    "sex": "Female",
     "location": "Chennai",
     "image": "/data/images/dog-sit.png"
+  },
+  {
+    "id": 5,
+    "name": "Bob",
+    "type": "Dog",
+    "age": "1 Yr",
+    "sex": "Female",
+    "location": "Chennai",
+    "image": "/data/images/dog-list.png"
+  },
+  {
+    "id": 6,
+    "name": "Meenu",
+    "type": "Cat",
+    "age": "2 Yr",
+    "sex": "Female",
+    "location": "Mumbai",
+    "image": "/data/images/cat-list.png"
+  },
+  {
+    "id": 7,
+    "name": "Reo2",
+    "type": "Dog",
+    "age": "2 Yr",
+    "sex": "Female",
+    "location": "Chennai",
+    "image": "/data/images/dog-sit.png"
+  },
+  {
+    "id": 8,
+    "name": "Reo",
+    "type": "Dog",
+    "age": "1 Yr",
+    "sex": "Female",
+    "location": "Mumbai",
+    "image": "/data/images/dog-sit.png"
   }
+  
 ]
