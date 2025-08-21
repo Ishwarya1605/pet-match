@@ -1,10 +1,164 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./About.scss";
-function About(){
-    return(
-        <>
-        <h1>About</h1>
-        </>
-    );
-}
-export default About;
+import arrow from "../../assets/arrow.svg";
+import { useNavigate, useLocation } from "react-router-dom";
+import uparrow from "../../assets/up-arrow.png";
+import tickpopup from "../../assets/tick-popup.png";
+import closepopup from "../../assets/close-popup.png";
+
+import Modal from "react-modal";
+Modal.setAppElement("#root");
+
+const VisitBooking = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { pet, user, visitLocation } = location.state || {};
+  const [petName, setPetName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [visitLoc, setVisitLoc] = useState("");
+  const [timeSlot, setTimeSlot] = useState("");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const closeModal = () => setModalIsOpen(false);
+  const [error, setError] = useState("");
+  useEffect(() => {
+    if (pet?.name) setPetName(pet.name);
+    if (user?.name) setUserName(user.name);
+    if (visitLocation) setVisitLoc(visitLocation);
+  }, [pet, user, visitLocation]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!timeSlot) return alert("Please select a time slot");
+    if (visitLocation.trim() === "") {
+      setError("This field is required!");
+    } else {
+      setError("");
+    };
+
+    setModalIsOpen(true);
+  };
+  if (!pet) {
+    return <div>No pet selected. Please go back and choose a pet.</div>;
+  }
+
+  const options = [
+    { value: "Morning", label: "Morning (10am-12pm)" },
+    { value: "Afternoon", label: "Afternoon (1pm-4pm)" },
+    { value: "Evening", label: "Evening (5pm-7pm)" },
+  ];
+
+  return (
+    <>
+      <section className="visit-booking">
+        <div className="container">
+          <div className="arrow" onClick={() => navigate("/browsepets")}>
+            <img src={arrow} alt="Arrow" />
+            <p>Visit Booking</p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="booking-form">
+            <div className="form-group">
+              <label> Basic Info Auto-filled:</label>
+              <input type="text" name="petName" value={petName} readOnly />
+
+            </div>
+
+            <div className="form-group">
+              <input type="text" name="userName" value={userName} readOnly />
+            </div>
+
+            <div className="form-group">
+              <input type="text" name="visitLocation" value={visitLoc} onChange={(e) => setVisitLoc(e.target.value)} />
+              {error && <p className="error">{error}</p>}
+            </div>
+
+
+            <div className="form-group">
+              <div
+                className="dropdown-header"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+              >
+                <span>
+                  {timeSlot ? `Preferred Time: ${timeSlot}` : "Preferred Time Slot"}
+                </span>
+                <img
+                  src={uparrow}
+                  alt="toggle"
+
+                />
+              </div>
+              {dropdownOpen && (
+                <div className="time-slot-options">
+                  {options.map((option) => (
+                    <div
+                      key={option.value}
+                      className={`time-slot ${timeSlot === option.value ? "selected" : ""}`}
+                      onClick={() => {
+                        setTimeSlot(option.value);
+                        setDropdownOpen(false);
+                      }}
+                    >
+                      <label className="container">
+                        <input
+                          type="radio"
+                          name="timeSlot"
+                          checked={timeSlot === option.value}
+                          onChange={() => setTimeSlot(option.value)}
+                        />
+                        <span className="checkmark">{option.label}</span>
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+            </div>
+            <div className="form-action">
+              <button type="submit" className="done-btn">
+                Done
+              </button>
+
+            </div>
+          </form>
+        </div>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          className="success-modal"
+          overlayClassName="modal-overlay"
+
+        >
+          <div className="modal-content">
+
+            <button className="close-btn" onClick={closeModal}>
+              <img src={closepopup} alt="close" />
+            </button>
+            <img src={tickpopup} alt="success" className="tickpopup" />
+            <p>
+              Your visit has been booked successfully! <br />
+              You'll receive confirmation soon via email/phone.
+            </p>
+            <button
+              className="home-btn"
+              onClick={() => {
+                setModalIsOpen(false);
+                navigate("/");
+              }}
+            >
+              Back to Home
+            </button>
+
+          </div>
+        </Modal>
+
+
+
+      </section >
+
+    </>
+  );
+};
+
+export default VisitBooking;
+

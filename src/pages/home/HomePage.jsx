@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Homepage.scss";
-import HowItWorks from "../../components/howitsworks/Howitsworks"
+import HowItWorks from "../howitsworks/Howitsworks"
 import bannerimge from "../../assets/banner.png";
 import pettransport from "../../assets/easy-transport.png";
 import original from "../../assets/original.png";
@@ -10,6 +10,8 @@ import click from "../../assets/click.png";
 import petsGroup from "../../assets/friends.png";
 import yellowSparkle from "../../assets/yellowSparkle.png";
 import yellowShapes from "../../assets/frdsroundshape.png";
+import leftarrow from "../../assets/left-arrow.png";
+import rightarrow from "../../assets/right-arrow.png";
 function Homepage() {
     const [index, setIndex] = useState(0);
     const prevSlide = () => {
@@ -44,14 +46,14 @@ function Homepage() {
                     </div>
                 </section>
                 <HowItWorks />
-                
+
                 <section>
                     <div className="pet-carousel">
                         <h2 className="title" id="view-pet">List Your Pet</h2>
 
                         <div className="carousel-wrapper">
                             <button className="nav-btn left" onClick={prevSlide}>
-                                &#8592;
+                                <img src={leftarrow} alt="left" className="arrow" />
                             </button>
 
                             <div className="cards-container">
@@ -69,7 +71,7 @@ function Homepage() {
                             </div>
 
                             <button className="nav-btn right" onClick={nextSlide}>
-                                &#8594;
+                                <img src={rightarrow} alt="right" className="arrow"/>
                             </button>
                         </div>
                     </div>

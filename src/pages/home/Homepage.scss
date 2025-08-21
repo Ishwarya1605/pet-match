@@ -63,7 +63,8 @@
         }
 
         .listbtn {
-            background-color: #fff;
+            background-color: #FFFDEF;
+            ;
             border: 1px solid #ffd343;
             color: #0a0a0a !important;
 
@@ -119,12 +120,19 @@
     .nav-btn {
         background: none;
         border: none;
-        font-size: 2rem;
         cursor: pointer;
-        padding: 0 15px;
+        padding: 0 2vw;
 
-        &:hover {
-            color: #FFD34D;
+        .arrow {
+            width: 6vw;
+            max-width: 30px;
+            min-width: 20px;
+            height: auto;
+            transition: filter 0.3s ease;
+        }
+
+        &:hover .arrow {
+            filter: brightness(0) saturate(100%) invert(81%) sepia(70%) saturate(522%) hue-rotate(1deg) brightness(102%) contrast(101%);
         }
     }
 
@@ -136,8 +144,8 @@
     }
 
     .pet-card {
-        background: white;
-        border: 1px solid #ddd;
+        background: #FFFFFF;
+        border: 1px solid #C6C6C6;
         border-radius: 12px;
         flex-grow: 0;
         flex-shrink: 0;
@@ -257,7 +265,7 @@
 .pets-banner {
     position: relative;
     text-align: center;
-    background: #fff;
+    background: #FFFFFF;
     padding: 25px;
     margin-top: 10px;
 
@@ -312,7 +320,7 @@
 
         .browsebtn {
             display: inline-block;
-            background: #FFC107;
+            background: #FFD343;
             padding: 0.5rem 1rem;
             color: #0A0A0A;
             text-decoration: none;
