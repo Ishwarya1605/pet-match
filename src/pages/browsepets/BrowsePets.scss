@@ -65,7 +65,7 @@
       cursor: pointer;
 
       &:hover {
-       background: #FFD343;
+        background: #FFD343;
 
       }
     }
@@ -155,20 +155,31 @@
         cursor: pointer;
         font-size: 15px;
         font-weight: 500;
+        text-decoration: none;
 
         &:hover {
-         background: #FFD34D;
+          background: #FFD34D;
 
         }
       }
     }
   }
-  .left-side-design {
-  position: absolute;
-  right: 65px;
-  top:415px;
-  height: 100vh;
-  z-index: -1; 
-}
 
+  .left-side-design {
+    position: absolute;
+    right: 65px;
+    top: 415px;
+    height: 100vh;
+    z-index: -1;
+  }
+
+  .left-foot {
+    position: absolute;
+    top: 847px;
+    right: 65px;
+
+
+
+
+  }
 }

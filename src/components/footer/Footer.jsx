@@ -26,9 +26,9 @@ function Footer() {
                         <p className="title-link">Quick Links </p>
                         <ul>
                             <li><a href="/">Home</a></li>
-                            <li><a href="/browse">Browse Pets</a></li>
+                            <li><a href="/browsepets">Browse Pets</a></li>
+                            <li><a href="/petsprofile">Pets Profile</a></li>
                             <li><a href="/about">About</a></li>
-                            <li><a href="/contact">Contact</a></li>
                         </ul>
                     </div>
                     <div className="footer-section contact">

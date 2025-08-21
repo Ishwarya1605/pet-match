@@ -11,8 +11,8 @@ function Header() {
                     <nav className="nav-link">
                         <Link className={pathname === "/" ? "active" : ""} to="/">Home</Link>
                         <Link className={pathname === "/browsepets" ? "active" : ""} to="browsepets">BrowsePets</Link>
-                        <Link className={pathname === "/about" ? "active" : ""} to="about">About</Link>
-                        <Link className={pathname === "/contact" ? "active" : ""} to="contact">Contact</Link>
+                        <Link className={pathname==="/petsprofile"?"avtive":""} to="petsprofile">PetProfile</Link>              
+                        <Link className={pathname === "/about" ? "active" : ""} to="about">About</Link>     
                         <div className="header-right"><button className="logout-btn">Logout</button></div>
                     </nav>
             </div>

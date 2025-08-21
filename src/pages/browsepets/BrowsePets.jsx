@@ -4,13 +4,15 @@ import axios from 'axios';
 import "./BrowsePets.scss";
 import arrow from "../../assets/arrow.svg";
 import browsefoot from "../../assets/browse-foot.svg";
+import browsefoot1 from "../../assets/browse-foot1.png";
 const BrowsePets = () => {
   const [pets, setPets] = useState([]);
   const [filteredPets, setFilteredPets] = useState([]);
   const [selectedType, setSelectedType] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedAge, setSelectedAge] = useState("");
-  const [selectedSex, setSelectedSex] = useState("");
+  const [selectedGender, setSelectedGender] = useState("");
+ 
 
   const navigate = useNavigate();
 
@@ -37,29 +39,29 @@ const BrowsePets = () => {
     if (selectedAge) {
       filtered = filtered.filter(pet => pet.age === selectedAge);
     }
-    if (selectedSex) {
-      filtered = filtered.filter(pet => pet.sex === selectedSex);
+    if (selectedGender) {
+      filtered = filtered.filter(pet => pet.gender === selectedGender);
     }
 
     setFilteredPets(filtered);
-  }, [selectedType, selectedLocation, selectedAge, selectedSex, pets]);
+  }, [selectedType, selectedLocation, selectedAge, selectedGender, pets]);
 
   const clearFilters = () => {
     setSelectedType("");
     setSelectedLocation("");
     setSelectedAge("");
-    setSelectedSex("")
+    setSelectedGender("")
   };
 
-  return (
+  return (<>
     <div className="browse-container">
       <div className='left-side-design'><img src={browsefoot} alt="foot-left" />
       </div>
-      <div className='browse-arrow' onClick={() => navigate("/")}> <img src={arrow} alt="Arrow" /><p>Browse Pets</p><br />
+      <div className='left-foot'><img src={browsefoot1} alt="foot-left1" /></div>
+      <div className='browse-arrow' onClick={() => navigate(-1)}> <img src={arrow} alt="Arrow" /><p>Browse Pets</p>
 
       </div>
       <div className='browse-heading'><p> FILTERS:</p></div>
-
 
       <div className="filters">
         <div className='filter-select'>
@@ -97,9 +99,10 @@ const BrowsePets = () => {
               <img src={pet.image} alt={pet.name} className="pet-image" />
               <div className="card-body">
                 <h3 className="pet-name">{pet.name}</h3>
-                <p className="pet-info">{`${pet.age}, ${pet.sex}`}</p>
+                <p className="pet-info">{`${pet.age}, ${pet.gender}`}</p>
                 <p className="pet-location">{pet.location}</p>
-                <button className="view-btn">View Profile</button>
+                <button className='view-btn' onClick={()=>navigate("/PetsProfile",{state:{pet}})}>View Profile</button>
+
               </div>
             </div>
           ))
@@ -111,10 +114,12 @@ const BrowsePets = () => {
       </div>
 
     </div>
+    </>
   );
 };
 
 export default BrowsePets;
+
 
 
 
