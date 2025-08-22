@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Homepage.scss";
+import { useNavigate } from "react-router-dom";
 import HowItWorks from "../howitsworks/Howitsworks"
 import bannerimge from "../../assets/banner.png";
 import pettransport from "../../assets/easy-transport.png";
@@ -13,6 +14,7 @@ import yellowShapes from "../../assets/frdsroundshape.png";
 import leftarrow from "../../assets/left-arrow.png";
 import rightarrow from "../../assets/right-arrow.png";
 function Homepage() {
+    const navigate = useNavigate();
     const [index, setIndex] = useState(0);
     const prevSlide = () => {
         if (index > 0) setIndex(index - 1);
@@ -64,14 +66,14 @@ function Homepage() {
                                             <h3 className="pet-name">{pet.name}</h3>
                                             <p className="pet-info">{pet.age}</p>
                                             <p className="pet-location">{pet.location}</p>
-                                            <button className="view-btn">View Profile</button>
+                                            <button className='view-btn' onClick={() => navigate("/PetsProfile", { state: { pet } })}>View Profile</button>
                                         </div>
                                     </div>
                                 ))}
                             </div>
 
                             <button className="nav-btn right" onClick={nextSlide}>
-                                <img src={rightarrow} alt="right" className="arrow"/>
+                                <img src={rightarrow} alt="right" className="arrow" />
                             </button>
                         </div>
                     </div>

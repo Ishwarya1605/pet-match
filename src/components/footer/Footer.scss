@@ -4,12 +4,14 @@
   font-family: var(--main-font);
   border: 1.5px solid #FFC400;
   margin: 0;
-.footer-whole {
+
+  .footer-whole {
     display: flex;
     padding: 15px;
     max-width: 1277px;
     margin: auto;
-}
+  }
+
   .heading-color {
     color: #FFD343;
     font-weight: 700;
@@ -164,6 +166,24 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-whole {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-section {
+      width: 100%;
+    }
+
+    .contact ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
     }
   }
 

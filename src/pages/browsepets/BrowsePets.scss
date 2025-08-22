@@ -1,7 +1,7 @@
 .browse-container {
   font-family: var(--main-font);
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 1085px;
   margin: 0 auto;
 
   .browse-arrow {
@@ -23,15 +23,19 @@
     margin-bottom: 1rem;
     border: 1px solid #BCBCBC;
     background: #FFFFFF;
-    width: 1032px;
     border-radius: 16px;
     border-width: 1px;
     padding: 25px;
+
 
     .filter-select {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+
     }
 
     select {
@@ -69,45 +73,15 @@
 
       }
     }
+
   }
-
-
-  .filter-tags {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 1rem 0;
-
-    .tag-btn {
-      background-color: #f4f4f4;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      padding: 0.4rem 1rem;
-      cursor: pointer;
-      font-size: 0.95rem;
-
-      &.active {
-        background-color: #f4c430;
-        color: #000;
-        border-color: #f4c430;
-      }
-
-      &:hover {
-        background-color: #f4c430;
-      }
-    }
-  }
-
 
   .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1.5rem;
     margin-top: 1rem;
-    width: 1085px;
-
     opacity: 1;
-
 
     .pet-card {
       background-color: #fff;
@@ -115,7 +89,6 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       padding: 1rem;
       transition: transform 0.2s ease;
-
 
 
 
@@ -167,7 +140,7 @@
 
   .left-side-design {
     position: absolute;
-    right: 65px;
+    right: 0;
     top: 415px;
     height: 100vh;
     z-index: -1;
@@ -176,10 +149,67 @@
   .left-foot {
     position: absolute;
     top: 847px;
-    right: 65px;
+    right: 0;
 
+  }
+}
 
+@media (max-width: 1024px) {
+  .filters {
+    padding: 15px;
+  }
 
+  .cards-container {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
 
+@media (max-width: 768px) {
+  .browse-arrow {
+    font-size: 18px;
+  }
+
+  .filters .filter-select {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .left-side-design {
+    display: none;
+  }
+
+  .left-side-design {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .left-side-design {
+    display: none;
+  }
+
+  .left-foot {
+    display: none;
+  }
+
+  .browse-heading {
+    font-size: 18px;
+  }
+
+  .filters select,
+  .clear-button {
+    width: 100%;
   }
 }
