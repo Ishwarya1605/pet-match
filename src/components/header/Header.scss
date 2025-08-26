@@ -1,106 +1,25 @@
-.header-first {
-    background-color: #FFD343;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: var(--main-font);
-    padding: 14px 32px;
+.navbar-nav .nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 0.2rem;
 
-    .header-left {
-        display: flex;
-        align-items: center;
-    }
-
-    .header-text {
-        display: flex;
-        align-items: center;
-        font-size: 20px;
-        font-weight: 700;
-        color: #000;
-        margin: 0;
-        gap: 16px;
-        height: 32px;
-    }
-
-    img {
-        width: 30px;
-        height: 27px;
-    }
-
-    .header-right {
-        margin-left: 1rem;
-    }
-
-    .nav-link {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-
-        font-size: 24px;
-        font-weight: 600;
-
-        a {
-            position: relative;
-            text-decoration: none;
-            color: #000;
-            font-weight: 600;
-            padding-bottom: 0.2rem;
-            transition: border-bottom 0.3s ease;
-
-            &::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: -14px;
-                width: 0;
-                height: 2px;
-                background-color: #000;
-                transition: width 0.3s ease;
-            }
-
-            &:hover::after {
-                width: 100%;
-            }
-
-            &.active::after {
-                width: 100%;
-            }
-        }
-    }
-     @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-
-    .menu-toggle {
-      display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-
-    .nav-link {
-      flex-direction: column;
-      width: 100%;
-      align-items: flex-start;
-    
-      margin-top: 1rem;
-    
-      &.open {
-        display: flex;
-      }
-
-      a {
-        padding: 0.5rem 0;
-        font-size: 20px;
-      }
-
-      .header-right {
-        width: 100%;
-        margin-top: 1rem;
-
-      }
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease;
   }
 
+  &:hover::after,
+  &.active::after {
+    width: 100%;
+  }
 }
+

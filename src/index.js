@@ -4,6 +4,7 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Modal from "react-modal";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 Modal.setAppElement("#root");
 
 

@@ -89,9 +89,7 @@ function PetsProfile() {
           <div className="book-btn">
             <button className="visit-button" onClick={() => navigate("/about", {
               state: {
-                pet: { name: pet.name },
-                user: { name: pet.owner?.name },
-                visitLocation: pet.location 
+                pet: { name: pet.name }
               }
             })}>Book a Visit</button>
           </div>

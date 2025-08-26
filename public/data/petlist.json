@@ -16,10 +16,10 @@
       "contact": "9876543765",
       "available_visiting_hours": "Morning 10am",
       "picture": {
-        "pit1": "/data/picture/pet-dog.jpg",
-        "pit2": "/data/picture/pet-dogwhite.jpg",
-        "pit3": "/data/picture/pet-dog.jpg",
-        "pit4": "/data/picture/pet-dogwhite.jpg"
+        "pit1": "/data/picture/pet-catblock.jpg",
+        "pit2": "/data/picture/pet-catwhite.jpg",
+        "pit3": "/data/picture/pet-catblock.jpg",
+        "pit4": "/data/picture/pet-catwhite.jpg"
       }
     }
   },
@@ -136,10 +136,10 @@
       "contact": "9751223452",
       "available_visiting_hours": "Morning 11am",
       "picture": {
-        "pit1": "/data/picture/pet-dog.jpg",
-        "pit2": "/data/picture/pet-dogwhite.jpg",
-        "pit3": "/data/picture/pet-dog.jpg",
-        "pit4": "/data/picture/pet-dogwhite.jpg"
+        "pit1": "/data/picture/pet-catblock.jpg",
+        "pit2": "/data/picture/pet-catwhite.jpg",
+        "pit3": "/data/picture/pet-catblock.jpg",
+        "pit4": "/data/picture/pet-catwhite.jpg"
       }
     }
   },

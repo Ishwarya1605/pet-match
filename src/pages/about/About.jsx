@@ -12,10 +12,8 @@ Modal.setAppElement("#root");
 const VisitBooking = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { pet, user, visitLocation } = location.state || {};
+  const { pet } = location.state || {};
   const [petName, setPetName] = useState("");
-  const [userName, setUserName] = useState("");
-  const [visitLoc, setVisitLoc] = useState("");
   const [timeSlot, setTimeSlot] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -23,24 +21,18 @@ const VisitBooking = () => {
   const [error, setError] = useState("");
   useEffect(() => {
     if (pet?.name) setPetName(pet.name);
-    if (user?.name) setUserName(user.name);
-    if (visitLocation) setVisitLoc(visitLocation);
-  }, [pet, user, visitLocation]);
+  }, [pet]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!timeSlot) return alert("Please select a time slot");
-    if (visitLocation.trim() === "") {
-      setError("This field is required!");
-    } else {
-      setError("");
-    };
-
+    setError("");
     setModalIsOpen(true);
   };
   if (!pet) {
     return <div>No pet selected. Please go back and choose a pet.</div>;
   }
+
 
   const options = [
     { value: "Morning", label: "Morning (10am-12pm)" },
@@ -65,11 +57,11 @@ const VisitBooking = () => {
             </div>
 
             <div className="form-group">
-              <input type="text" name="userName" value={userName} readOnly />
+              <input type="text" name="userName" placeholder="Your Name" required />
             </div>
 
             <div className="form-group">
-              <input type="text" name="visitLocation" value={visitLoc} onChange={(e) => setVisitLoc(e.target.value)} />
+              <input type="text" name="visitLocation" placeholder="Visit Location" />
               {error && <p className="error">{error}</p>}
             </div>
 
