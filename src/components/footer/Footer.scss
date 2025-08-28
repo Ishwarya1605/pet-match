@@ -2,14 +2,22 @@
   background-color: #090909;
   color: #FFFFFF;
   font-family: var(--main-font);
-  border: 1.5px solid #FFC400;
+  border: 1.5px solid #ffc400;
   margin: 0;
 
   .footer-whole {
     display: flex;
-    padding: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
     max-width: 1277px;
     margin: auto;
+  }
+
+  .footer-section {
+    margin: 1rem;
+    padding: 9px;
+    flex: 1 1 220px;
   }
 
   .heading-color {
@@ -20,29 +28,28 @@
     line-height: 1;
   }
 
+  .brand p:first-child {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+
+    img {
+      margin-right: 8px;
+      width: 28px;
+    }
+  }
+
   p {
     margin: 0;
     font-weight: 500;
     font-size: 16px;
   }
 
-  .brand p:first-child {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-  }
-
-  .footer-section {
-    margin: 2rem;
-    padding: 9px;
-    flex: 1 1 200px;
-  }
-
   ul {
-
     margin: 0;
-
+    padding: 0;
+    list-style: none;
   }
 
   li {
@@ -50,91 +57,40 @@
     color: #FFFFFF;
   }
 
-  li::marker {
-    color: #090909;
-  }
-
-
-
-
-  .footer-section.policies {
-    ul {
-      list-style: disc;
-      font-size: 20px;
-      font-weight: 500;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
-    li::marker {
-      color: #FFFFFF;
-    }
-  }
-
-
-
-  .title-link {
-    font-size: 24px;
-    font-weight: 700;
-    font-style: bold;
-  }
-
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-    font-size: 20px;
+  .footer-section.policies ul {
+    list-style: disc inside;
+    font-size: 18px;
     font-weight: 500;
 
-    li {
-      margin-bottom: 10px;
-
-      a {
-        color: #FFFFFF;
-        text-decoration: none;
-        transition: color 0.3s;
-
-        &:hover,
-        &:active {
-          color: #FFC400;
-        }
-      }
+    li::marker {
+      color: #090909;
     }
   }
 
+  .title-link,
   .title-contact {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
-    font-style: bold;
+    margin-bottom: 12px;
   }
 
-  img {
-    vertical-align: middle;
-    margin-right: 0.5rem;
-    width: 30px;
-    height: 28px;
+  .footer-section ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover,
+    &:active {
+      color: #FFCC00;
+    }
   }
 
   .footer-section.contact ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    font-size: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
     font-weight: 600;
-
-    a {
-      color: #FFFFFF;
-      text-decoration: none;
-      transition: color 0.3s;
-
-      &:hover,
-      &:active {
-        color: #ffcc00;
-      }
-    }
 
     img {
       width: 20px;
@@ -142,14 +98,12 @@
     }
   }
 
-  .app-contact1 {
-    font-size: 16px;
-    font-weight: 500;
-  }
-
+  .app-contact1,
   .app-contact2 {
     font-size: 16px;
     font-weight: 500;
+    color: #FFFFFF;
+    text-decoration: none;
   }
 
   >div:last-child {
@@ -158,18 +112,26 @@
     margin: 0;
     font-size: 0.85rem;
     color: #FFFFFF;
-    padding-bottom: 20px;
+    padding: 15px 0;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .footer-whole {
-      flex-direction: column;
-      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-section {
+      flex: 1 1 45%;
       text-align: center;
+    }
+
+    .footer-section.contact ul {
+      justify-content: center;
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 576px) {
     .footer-whole {
       flex-direction: column;
       align-items: center;
@@ -177,14 +139,13 @@
     }
 
     .footer-section {
-      width: 100%;
+      flex: 1 1 100%;
+      margin: 10px 0;
     }
 
-    .contact ul {
+    .footer-section.contact ul {
       flex-direction: column;
-      align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
   }
-
 }

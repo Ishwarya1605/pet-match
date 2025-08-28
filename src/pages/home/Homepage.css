@@ -66,7 +66,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 400px;
+  max-width: 345px;
 }
 
 @media (max-width: 900px) {
@@ -117,6 +117,7 @@
   flex: 1;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  gap: 20px;
 }
 .pet-carousel .pet-card {
   background: #FFFFFF;
@@ -139,8 +140,7 @@
   height: 289px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-radius: 12px;
   width: 100%;
   border-radius: 12px;
 }
@@ -167,7 +167,7 @@
   margin-top: 10px;
   cursor: pointer;
   font-weight: 500;
-  width: 305px;
+  width: 276px;
   height: 50px;
 }
 .pet-carousel .pet-card .view-btn:hover {

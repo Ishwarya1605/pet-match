@@ -12,12 +12,13 @@ const BrowsePets = () => {
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedAge, setSelectedAge] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
- 
+  const [showFilters, setShowFilters] = useState(true);
+
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:3000/data/petlist.json")
+    axios.get("data/petlist.json")
       .then((res) => {
         setPets(res.data);
         setFilteredPets(res.data);
@@ -61,9 +62,17 @@ const BrowsePets = () => {
       <div className='browse-arrow' onClick={() => navigate(-1)}> <img src={arrow} alt="Arrow" /><p>Browse Pets</p>
 
       </div>
-      <div className='browse-heading'><p> FILTERS:</p></div>
+      <div className='browse-heading'>
+        <p> FILTERS:</p>
+        <button
+          className="toggle-filters"
+          onClick={() => setShowFilters(!showFilters)}
+        >
+          {showFilters ? "Hide Filters" : "Show Filters"}
+        </button>
+      </div>
 
-      <div className="filters">
+      <div className={`filters ${!showFilters ? "collapsed" : ""}`}>
         <div className='filter-select'>
           <div>
             <select onChange={(e) => setSelectedType(e.target.value)} value={selectedType}>
@@ -92,6 +101,8 @@ const BrowsePets = () => {
           </div>
         </div>
       </div>
+
+
       <div className="cards-container">
         {filteredPets.length > 0 ? (
           filteredPets.map((pet) => (
@@ -101,7 +112,7 @@ const BrowsePets = () => {
                 <h3 className="pet-name">{pet.name}</h3>
                 <p className="pet-info">{`${pet.age}, ${pet.gender}`}</p>
                 <p className="pet-location">{pet.location}</p>
-                <button className='view-btn' onClick={()=>navigate("/PetsProfile",{state:{pet}})}>View Profile</button>
+                <button className='view-btn' onClick={() => navigate("/PetsProfile", { state: { pet } })}>View Profile</button>
 
               </div>
             </div>
@@ -113,8 +124,8 @@ const BrowsePets = () => {
 
       </div>
 
-    </div>
-    </>
+    </div >
+  </>
   );
 };
 

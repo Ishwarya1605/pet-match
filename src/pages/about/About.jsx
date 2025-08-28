@@ -143,9 +143,6 @@ const VisitBooking = () => {
 
           </div>
         </Modal>
-
-
-
       </section >
 
     </>
