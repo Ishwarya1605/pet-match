@@ -11,44 +11,30 @@
     font-size: 24px;
 
     img {
-      padding-right: 8px;
+      height: 33px;
+      padding-right: 10px;
+      vertical-align: middle;
+      width: auto;
     }
   }
 
   .browse-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     font-size: 24px;
     font-weight: 700;
+    font-style: bold;
     padding-left: 8px;
-
-    .toggle-filters {
-      display: none;
-      background: #FFD343;
-      border: none;
-      border-radius: 6px;
-      padding: 6px 12px;
-      font-weight: 600;
-      cursor: pointer;
-      color: #fff;
-      font-size: 14px;
-
-      &:hover {
-        background: #e6bb2d;
-      }
-    }
   }
+
 
 
   .filters {
     margin-bottom: 1rem;
     border: 1px solid #BCBCBC;
-    background: #fff;
+    background: #FFFFFF;
     border-radius: 16px;
+    border-width: 1px;
     padding: 25px;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
+
 
     .filter-select {
       display: flex;
@@ -56,6 +42,8 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
+
+
     }
 
     select {
@@ -64,8 +52,13 @@
       border: 1px solid #ccc;
       min-width: 150px;
       cursor: pointer;
+      gap: 1px;
       font-weight: 500;
-      font-size: 18px;
+      font-style: Medium;
+      font-size: var(--main-font);
+      font-size: 20px;
+
+
 
       &:focus {
         outline: none;
@@ -76,6 +69,7 @@
     .clear-button {
       padding: 0.6rem 1.2rem;
       background: #FFD343;
+
       border: none;
       border-radius: 8px;
       color: #fff;
@@ -83,24 +77,28 @@
       cursor: pointer;
 
       &:hover {
-        background: #e6bb2d;
+        background: #FFD343;
+
       }
     }
-  }
 
+  }
 
   .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1.5rem;
     margin-top: 1rem;
+    opacity: 1;
 
     .pet-card {
-      background: #fff;
+      background-color: #fff;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       padding: 1rem;
       transition: transform 0.2s ease;
+
+
 
       &:hover {
         transform: translateY(-5px);
@@ -113,38 +111,41 @@
         object-fit: cover;
         border-radius: 10px;
         margin-bottom: 0.8rem;
+
+
       }
 
-      .pet-name {
+      h4 {
+        margin-bottom: 0.4rem;
         font-size: 20px;
         font-weight: 600;
-        margin-bottom: 0.4rem;
       }
 
-      .pet-info,
-      .pet-location {
+      p {
+        margin-bottom: 0.8rem;
         font-size: 16px;
         font-weight: 500;
-        margin-bottom: 0.6rem;
       }
 
       .view-btn {
         background: #FFD34D;
-        padding: 8px 40px;
+        padding: 0.5rem 0.8rem;
         border: none;
         border-radius: 6px;
         font-weight: 600;
         cursor: pointer;
         font-size: 15px;
+        font-weight: 500;
+        text-decoration: none;
         width: 100%;
 
         &:hover {
-          background: #e6bb2d;
+          background: #FFD34D;
+
         }
       }
     }
   }
-
 
   .left-side-design {
     position: absolute;
@@ -158,11 +159,16 @@
     position: absolute;
     top: 847px;
     right: 0;
+
   }
 }
 
 @media (max-width: 1024px) {
   .browse-container {
+    p {
+      font-size: 18px;
+    }
+
     .filters {
       padding: 15px;
     }
@@ -180,16 +186,19 @@
 
 @media (max-width: 768px) {
   .browse-container {
-    .browse-arrow{
+    .browse-arrow {
       font-size: 18px;
       display: flex;
       align-items: flex-start;
-      img{
-        height: 33px;
+
+      img {
+        height: 26px;
         width: auto;
         vertical-align: middle;
       }
+
     }
+
     .filters {
       .filter-select {
         flex-direction: column;
@@ -218,19 +227,22 @@
 }
 
 @media (max-width: 480px) {
-  .filters {
+  .browse-container {
 
-    select,
-    .clear-button {
+    .filters {
+
+      select,
+      .clear-button {
+        width: 100%;
+      }
+    }
+
+    .cards-container {
+      grid-template-columns: 1fr;
+    }
+
+    .view-btn {
       width: 100%;
     }
-  }
-
-  .cards-container {
-    grid-template-columns: 1fr;
-  }
-
-  .view-btn {
-    width: 100%;
   }
 }

@@ -12,9 +12,6 @@ const BrowsePets = () => {
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedAge, setSelectedAge] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
-  const [showFilters, setShowFilters] = useState(true);
-
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -64,15 +61,8 @@ const BrowsePets = () => {
       </div>
       <div className='browse-heading'>
         <p> FILTERS:</p>
-        <button
-          className="toggle-filters"
-          onClick={() => setShowFilters(!showFilters)}
-        >
-          {showFilters ? "Hide Filters" : "Show Filters"}
-        </button>
       </div>
-
-      <div className={`filters ${!showFilters ? "collapsed" : ""}`}>
+      <div className="filters">
         <div className='filter-select'>
           <div>
             <select onChange={(e) => setSelectedType(e.target.value)} value={selectedType}>
