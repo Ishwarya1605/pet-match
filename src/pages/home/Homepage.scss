@@ -163,7 +163,7 @@
 }
 
 .pet-carousel {
-
+  padding: 36px;
   margin: 50px auto;
   text-align: center;
 
@@ -254,11 +254,10 @@
       background-color: #FFD34D;
       border: none;
       border-radius: 6px;
-      margin-top: 10px;
       cursor: pointer;
       font-weight: 500;
       width: 100%;
-      padding: .5rem 4.3rem;
+      padding: 0.5rem 0.8rem;
     }
   }
 
@@ -301,8 +300,6 @@
           }
 
           .view-btn {
-            font-size: 15px;
-            padding: 10px;
             width: 100%;
           }
         }
@@ -349,8 +346,6 @@
       }
 
       .view-btn {
-        display: block;
-        margin: 10px auto 0 auto;
         width: 100%;
       }
 
