@@ -32,8 +32,6 @@ const VisitBooking = () => {
   if (!pet) {
     return <div>No pet selected. Please go back and choose a pet.</div>;
   }
-
-
   const options = [
     { value: "Morning", label: "Morning (10am-12pm)" },
     { value: "Afternoon", label: "Afternoon (1pm-4pm)" },
@@ -45,7 +43,7 @@ const VisitBooking = () => {
       <section className="visit-booking">
         <div className="container">
           <div className="arrow" onClick={() => navigate("/browsepets")}>
-            <img src={arrow} alt="Arrow" />
+            <img src={arrow} alt="Arrow"/>
             <p>Visit Booking</p>
           </div>
 
@@ -68,7 +66,7 @@ const VisitBooking = () => {
 
             <div className="form-group">
               <div
-                className="dropdown-header"
+                className={`dropdown-header ${dropdownOpen ? "open" : ""}`}
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 <span>
@@ -76,8 +74,7 @@ const VisitBooking = () => {
                 </span>
                 <img
                   src={uparrow}
-                  alt="toggle"
-
+                  alt="toggle" className="drop-img"
                 />
               </div>
               {dropdownOpen && (
@@ -98,7 +95,7 @@ const VisitBooking = () => {
                           checked={timeSlot === option.value}
                           onChange={() => setTimeSlot(option.value)}
                         />
-                        <span className="checkmark">{option.label}</span>
+                        <span className="text">{option.label}</span>
                       </label>
                     </div>
                   ))}

@@ -103,7 +103,7 @@
 
 
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
         .step {
             flex-direction: column !important;
             text-align: center;
@@ -135,15 +135,16 @@
             left: 0 !important;
 
         }
-    }
 
-
-    @media (max-width: 950px) {
         .paw {
             display: none;
 
         }
 
+    }
+
+
+    @media (max-width: 500) {
         .text {
             h1 {
                 font-size: 20px;

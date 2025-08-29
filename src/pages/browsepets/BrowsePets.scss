@@ -6,12 +6,12 @@
 
   .browse-arrow {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     font-weight: 600;
     font-size: 24px;
 
     img {
-      margin-right: 8px;
+      padding-right: 8px;
     }
   }
 
@@ -136,6 +136,7 @@
         font-weight: 600;
         cursor: pointer;
         font-size: 15px;
+        width: 100%;
 
         &:hover {
           background: #e6bb2d;
@@ -179,6 +180,16 @@
 
 @media (max-width: 768px) {
   .browse-container {
+    .browse-arrow{
+      font-size: 18px;
+      display: flex;
+      align-items: flex-start;
+      img{
+        height: 33px;
+        width: auto;
+        vertical-align: middle;
+      }
+    }
     .filters {
       .filter-select {
         flex-direction: column;
@@ -207,22 +218,19 @@
 }
 
 @media (max-width: 480px) {
-  .browse-container {
+  .filters {
 
-    .filters {
-
-      select,
-      .clear-button {
-        width: 100%;
-      }
-    }
-
-    .cards-container {
-      grid-template-columns: 1fr;
-    }
-
-    .view-btn {
+    select,
+    .clear-button {
       width: 100%;
     }
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .view-btn {
+    width: 100%;
   }
 }

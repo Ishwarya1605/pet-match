@@ -13,6 +13,7 @@ import yellowSparkle from "../../assets/yellowSparkle.png";
 import yellowShapes from "../../assets/frdsroundshape.png";
 import leftarrow from "../../assets/left-arrow.png";
 import rightarrow from "../../assets/right-arrow.png";
+
 function Homepage() {
     const navigate = useNavigate();
     const [index, setIndex] = useState(0);
@@ -24,9 +25,10 @@ function Homepage() {
     };
     const [pets, setPets] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:3000/data/petlist.json")
+        fetch("data/petlist.json")
             .then((res) => res.json())
-            .then((data) => setPets(data));
+            .then((data) => setPets(data))
+            .catch((err) => console.error("API error:", err));
     }, []);
 
     return (
@@ -117,12 +119,12 @@ function Homepage() {
                     <img src={yellowShapes} alt="round" className="decor-shapes" />
                     <img src={yellowSparkle} alt="star" className="decor-sparkle" />
                     <img src={petsGroup} alt="Pets" className="pets-image" />
-
                     <div className="banner-content">
                         <h2>"Find your forever friend"</h2>
                         <p>Browse hundreds of lovable pets waiting for their forever homes.</p>
                         <a href="browsepets" className="browsebtn">Browse Pets</a>
                     </div>
+
 
                 </section>
             </div>

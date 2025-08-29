@@ -83,7 +83,7 @@
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .banner-inner {
     flex-direction: column;
     text-align: center;
@@ -111,7 +111,29 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
+  .banner-inner {
+    flex-direction: column;
+    text-align: center;
+
+    .banner-text {
+      h2 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+
+    .banner-img {
+      max-width: 280px;
+      margin: auto;
+    }
+  }
+}
+
+@media (max-width: 480px) {
   .banner-inner {
     padding: 0 15px;
 
@@ -134,8 +156,7 @@
 
       .browsebtn,
       .listbtn {
-        min-width: 160px;
-        height: 44px;
+        padding: 12px;
       }
     }
   }
@@ -203,8 +224,6 @@
     }
 
     .pet-image {
-      max-width: 364px;
-      height: 289px;
       object-fit: cover;
       border-radius: 12px;
       width: 100%;
@@ -234,19 +253,63 @@
     .view-btn {
       background-color: #FFD34D;
       border: none;
-      padding: 7px 8px;
-      border-radius: 16px;
+      border-radius: 6px;
       margin-top: 10px;
       cursor: pointer;
       font-weight: 500;
-      width: 276px;
-      height: 50px;
+      width: 100%;
+      padding: .5rem 4.3rem;
+    }
+  }
 
-      &:hover {
-        background-color: #f0c000;
+  @media (max-width: 1024px) {
+    .pet-carousel {
+      margin: 40px auto;
+
+      .title {
+        font-size: 30px;
+        margin-bottom: 18px;
+      }
+
+      .carousel-wrapper {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .nav-btn {
+        .arrow {
+          width: 28px;
+        }
+      }
+
+      .cards-container {
+        gap: 24px;
+        justify-content: center;
+      }
+
+      .pet-card {
+        max-width: 300px;
+
+        .card-body {
+          .pet-name {
+            font-size: 28px;
+          }
+
+          .pet-info,
+          .pet-location {
+            font-size: 20px;
+          }
+
+          .view-btn {
+            font-size: 15px;
+            padding: 10px;
+            width: 100%;
+          }
+        }
       }
     }
   }
+
 
   @media (max-width: 768px) {
     .title {
@@ -266,7 +329,6 @@
     }
 
     .cards-container {
-      flex-direction: column;
       align-items: center;
     }
 
@@ -290,7 +352,6 @@
         display: block;
         margin: 10px auto 0 auto;
         width: 100%;
-        max-width: 276px;
       }
 
     }
@@ -311,11 +372,6 @@
       .pet-info,
       .pet-location {
         font-size: 14px;
-      }
-
-      .pet-image {
-        height: 160px;
-
       }
     }
   }
@@ -341,8 +397,26 @@
       max-width: 250px;
       height: 200px;
     }
+  }
+}
 
+@media(max-width:480px) {
+  .whychoose {
+    h2 {
+      font-size: 24px;
+    }
+  }
 
+  .petchoose {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+
+    img {
+      max-width: 90%;
+      height: auto;
+      margin-bottom: 15px;
+    }
   }
 }
 
@@ -352,17 +426,63 @@
     text-align: center;
     font-size: 36px;
     font-weight: 700;
+    margin-top: 20px;
+
   }
 
   .services {
 
     display: flex;
-    justify-content: space-evenly;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin-top: 20px;
 
     p {
       font-size: 24px;
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      img {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    flex-direction: column;
+    align-items: center;
+
+    .one,
+    .two {
+      width: 100%;
+      flex: 1 1 100%;
+      padding-left: 43px
+    }
+  }
+}
+
+@media(max-width:480px) {
+  .ourservices {
+    h2 {
+      font-size: 28px;
+    }
+
+    .services {
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 15px;
+      }
 
       img {
         width: 30px;
@@ -376,8 +496,9 @@
   position: relative;
   text-align: center;
   background: #FFFFFF;
-  padding: 25px;
+  padding-bottom: 40px;
   margin-top: 10px;
+
 
   .decor-shapes {
     position: absolute;
@@ -408,7 +529,7 @@
     position: relative;
     background: #090909;
     color: #fff;
-    padding: 50px 25px 25px;
+    padding: 60px 25px 25px;
     z-index: 1;
 
     h2 {
@@ -435,73 +556,78 @@
       }
     }
   }
+}
 
-  @media (max-width: 1024px) {
+@media (max-width: 1024px) {
+  .pets-banner {
     .pets-image {
-      top: 60px;
-    }
-
-    .banner-content {
-      padding: 30px 20px;
-
-      h2 {
-        font-size: 28px;
-      }
-
-      p {
-        font-size: 18px;
-      }
-
-      .browsebtn {
-        font-size: 15px;
-        padding: 0.5rem 0.9rem;
-      }
-
+      top: 93px;
     }
   }
 
-  @media (max-width:950px) {
+  .banner-content {
+    padding: 30px 20px;
 
-    .decor-shapes,
-    .decor-sparkle {
-      display: none;
-    }
 
   }
 
-  @media (max-width: 480px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
+  h2 {
+    font-size: 28px;
+  }
 
+  p {
+    font-size: 18px;
+  }
+
+  .browsebtn {
+    font-size: 15px;
+    padding: 0.5rem 0.9rem;
+  }
+
+
+}
+
+
+@media (max-width:750px) {
+
+  .decor-shapes,
+  .decor-sparkle {
+    display: none;
+  }
+
+  .pets-banner {
     .pets-image {
-      order: 1;
-      width: 100%;
-      max-width: 300px;
-      top: 39px;
-      margin: 0 auto 10px;
+      top: 67px;
+    }
+  }
+}
+
+@media (max-width: 480px),
+(min-width:750) {
+
+  .pets-banner {
+    .pets-image {
+      top: 37px;
+    }
+  }
+
+  .banner-content {
+    order: 2;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+
+    h2 {
+      font-size: 20px;
     }
 
-    .banner-content {
-      order: 2;
-      width: 100%;
-      text-align: center;
-      padding: 15px;
-      margin: 0;
+    p {
+      font-size: 14px;
+    }
 
-      h2 {
-        font-size: 20px;
-      }
-
-      p {
-        font-size: 14px;
-      }
-
-      .browsebtn {
-        font-size: 13px;
-        padding: 0.4rem 0.7rem;
-      }
+    .browsebtn {
+      font-size: 13px;
+      padding: 0.4rem 0.7rem;
     }
   }
 }

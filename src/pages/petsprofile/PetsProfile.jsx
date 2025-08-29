@@ -23,7 +23,7 @@ function PetsProfile() {
   useEffect(() => {
     if (!pet) return;
 
-    fetch('http://localhost:3000/data/petlist.json')
+    fetch("data/petlist.json")
       .then(res => res.json())
       .then(data => {
         const filtered = data
